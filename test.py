@@ -1,46 +1,29 @@
-input = dict(
-    layerName = 'current_world',
-    styleName = 'current_dir',
-    scale = 0.01,
-    u = 'uo',
-    v = 'vo',
-    filterCutoff = 3,
-    catNums = [
-        0.5,
-        0.75,
-        1,
-        1.25,
-        1.5,
-        1.75,
-        2,
-        2.5
-    ],
-    catColors = [
-        '#ffffff',
-        '#1ce3ed',
-        '#2040f7',
-        '#148818',
-        '#e2f720',
-        '#f7b320',
-        '#f77a20',
-        '#f73620',
-        '#000000'
-    ],
-    strokeWidth = 0.6,
-    strokeCol = '#ffffff',
-    markSize = 25
+class Sld:
+    def __init__(self, test='martin'):
+        self.test = test
+        # self.name = "peter"\
+        xml = self.createSld()
 
-)
-
-
-def categorize(nums, colors):
-    res = [f"<ogc:Literal>{x}</ogc:Literal>" for y in zip(colors, nums) for x in y]+ [f"<ogc:Literal>{colors[-1]}</ogc:Literal>"]
-    return "\n".join(res)
+    name = 'wave_height'
+    scale = 0.01
+    catNums = [1,2,3,4]
+    colors = []
+    _vals = dict(name = name,
+                scale= scale,
+                catNums = catNums,
+                test= test
+                )
 
 
 
-def current_dir(input):
-    return(f"""
+    @classmethod
+    def initvals(cls):
+        return cls._vals
+
+    def createSld(self, colors= None):
+        if not colors:
+            color = self.colors
+        self.xml = f"""
     <?xml version="1.0" encoding="UTF-8"?>
 <StyledLayerDescriptor xmlns="http://www.opengis.net/sld"
   xmlns:ogc="http://www.opengis.net/ogc"
@@ -48,7 +31,7 @@ def current_dir(input):
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/sld
  http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd" version="1.0.0">
   <NamedLayer>
-    <Name>{input['layerName']}</Name>
+    <Name>{self.name}</Name>
     <UserStyle>
       <FeatureTypeStyle>
         <Title>{input['styleName']}</Title>
@@ -135,9 +118,19 @@ def current_dir(input):
     </UserStyle>
   </NamedLayer>
 </StyledLayerDescriptor>
-    """)
+    """
+        print(f"""mein name ist {cls.name} ich skaliere {cls.scale} nummern: {" ".join([str(e) for e in cls.catNums])}""")
+        return f"""mein name ist {cls.name} ich skaliere {cls.scale} nummern: {" ".join([str(e) for e in cls.catNums])}"""
+    @classmethod
+    def writeSld(cls, outfile):
+        sld = cls.createSLd()
 
-xml = current_dir(input)
-file = open('current.xml', 'w')
-file.write(xml)
-file.close()
+        file = open(f'./{outfile}.xml', 'w')
+        file.write(sld)
+        file.close()
+
+
+
+
+Sld.createSld()
+k = Sld()
