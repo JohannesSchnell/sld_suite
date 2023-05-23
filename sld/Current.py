@@ -4,9 +4,9 @@ class Current:
     scale = 0.01
     u = 'uo'
     v = 'vo'
-    #needed for largenumber-nan (-9999)
+    # needed for largenumber-nan (-9999)
     filterCutoff = 3
-    #len colors has to be 1 bigger than len nums
+    # len colors has to be 1 bigger than len nums
     catNums = [
         0.5,
         0.75,
@@ -31,31 +31,30 @@ class Current:
     strokeWidth = 0.6
     strokeCol = '#ffffff'
     markSize = 25
-    _vals = dict( layerName = layerName,
-                 styleName = styleName,
-                 scale = scale,
-                 u = u ,
-                 v = v,
-                filterCutoff = filterCutoff ,
-                 catNums = catNums,
-                 catColors = catColors,
-                strokeWidth = strokeWidth,
-                 strokeCol = strokeCol,
-                 markSize = markSize)
-    
-    
-    def initvals (self):
+    _vals = dict(layerName=layerName,
+                 styleName=styleName,
+                 scale=scale,
+                 u=u,
+                 v=v,
+                 filterCutoff=filterCutoff,
+                 catNums=catNums,
+                 catColors=catColors,
+                 strokeWidth=strokeWidth,
+                 strokeCol=strokeCol,
+                 markSize=markSize)
+
+    def initvals(self):
         print(self._vals)
-        return(self._vals)
+        return (self._vals)
 
     @staticmethod
     def categorize(catNums, catColors):
         res = [f"<ogc:Literal>{x}</ogc:Literal>" for y in zip(catColors, catNums) for x in y] + [
             f"<ogc:Literal>{catColors[-1]}</ogc:Literal>"]
         return "\n".join(res)
-    
+
     def createSld(self):
-        return(f"""
+        return (f"""
             <?xml version="1.0" encoding="UTF-8"?>
         <StyledLayerDescriptor xmlns="http://www.opengis.net/sld"
           xmlns:ogc="http://www.opengis.net/ogc"
@@ -155,9 +154,9 @@ class Current:
     def printSld(self):
         print(self.createSld())
 
-    def writeSld(self, outfile='current_world'):
-        current = self.createSld()
+    def writeSld(self, outfile=layerName):
+        sld = self.createSld()
 
         file = open(f'./xml/{outfile}.xml', 'w')
-        file.write(current)
+        file.write(sld)
         file.close()

@@ -1,37 +1,27 @@
-class WaveHeight:
-    layerName = 'wave_height_world'
-    styleName = 'wave_height'
-    #logic here is 'bigger than' so first val needs to be smaller than 0
-    catNums=[-1,
-             3,
-             5,
-             7,
-             15]
-    #1:1 mapping of Num and Colors length
-    catColors = ['#1ce3ed',
-                 '#148818',
-                 '#ba5802',
-                 '#ba0e02',
-                 '#000000']
+class Heatmap:
+    def __init__(self, layerName, styleName, catNums, catColors):
+        self.layerName = layerName
+        self.styleName = styleName
+        self.catNums = catNums
+        self.catColors = catColors
 
-    _vals = dict(
-        layerName = layerName,
-        styleName = styleName,
-        catNums = catNums,
-        catColors = catColors
-    )
-
-    def initvals(self):
-        print(self._vals)
-        return (self._vals)
+    def initvals(self, layerName, styleName, catNums, catColors):
+        _vals = dict(
+            layerName=layerName,
+            styleName=styleName,
+            catNums=catNums,
+            catColors=catColors
+        )
+        print(_vals)
+        return (_vals)
 
     @staticmethod
     def categorize(catColors, catNums):
-        res = [f"""<ColorMapEntry color = {col} quantity = '{catNums[i]}'/>"""for i, col in enumerate(catColors)]
+        res = [f"""<ColorMapEntry color = '{col}' quantity = '{catNums[i]}'/>""" for i, col in enumerate(catColors)]
         return "\n".join(res)
 
     def createSld(self):
-        return(f"""
+        return (f"""
         <?xml version="1.0" encoding="UTF-8"?>
         <StyledLayerDescriptor xmlns="http://www.opengis.net/sld"
           xmlns:ogc="http://www.opengis.net/ogc"
@@ -60,9 +50,9 @@ class WaveHeight:
     def printSld(self):
         print(self.createSld())
 
-    def writeSld(self, outfile='current_world'):
-        current = self.createSld()
+    def writeSld(self, outfile=None):
+        sld = self.createSld()
 
-        file = open(f'./xml/{outfile}.xml', 'w')
-        file.write(current)
+        file = open(f'./xml/{outfile or self.layerName}.xml', 'w+')
+        file.write(sld)
         file.close()
