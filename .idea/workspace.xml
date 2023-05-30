@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77b98476-8966-42db-b444-bc0c302100a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sld/Current.py" beforeDir="false" afterPath="$PROJECT_DIR$/sld/Current.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sld/Pressure.py" beforeDir="false" afterPath="$PROJECT_DIR$/sld/Pressure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sld/Wave_dir.py" beforeDir="false" afterPath="$PROJECT_DIR$/sld/Wave_dir.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sld/Wind.py" beforeDir="false" afterPath="$PROJECT_DIR$/sld/Wind.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sld/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/sld/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sld/DepthLine.py" beforeDir="false" afterPath="$PROJECT_DIR$/sld/DepthLine.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +40,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/jschnell/work/PROJEKTE/MARIDATA/demReduction",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jschnell/work/PROJEKTE/MARIDATA/demReduction&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings>

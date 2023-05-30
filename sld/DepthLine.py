@@ -1,18 +1,21 @@
 class DepthLine:
-    layerName = ''
-    layerStyle = ''
-    _vals = dict(
+    layerName = 'sea_depth_line'
+    layerStyle = 'sea_depth_line'
+    propertyName = 'z'
+    depth = -15
+    strokeWidth = 5
 
+    _vals = dict(
+        layerName=layerName,
+        layerStyle=layerStyle,
+        propertyName=propertyName,
+        depth=depth,
+        strokeWidth=strokeWidth
     )
 
     def initvals(self):
         print(self._vals)
         return (self._vals)
-
-    @staticmethod
-    def categorize(catColors, catNums):
-        res = [f"""<ColorMapEntry color = {col} quantity = '{catNums[i]}'/>""" for i, col in enumerate(catColors)]
-        return "\n".join(res)
 
     def createSld(self):
         return f"""
@@ -25,9 +28,9 @@ class DepthLine:
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <NamedLayer>
-    <Name>default_line</Name>
+    <Name>{self.layerName}</Name>
     <UserStyle>  
-      <Title>Blue Line</Title>
+      <Title>{self.layerStyle}</Title>
       <FeatureTypeStyle>
 
         
@@ -38,15 +41,15 @@ class DepthLine:
           
         <ogc:Filter>
           <ogc:PropertyIsEqualTo>
-            <ogc:PropertyName>z</ogc:PropertyName>
-              <ogc:Literal>-15</ogc:Literal>
+            <ogc:PropertyName>{self.propertyName}</ogc:PropertyName>
+              <ogc:Literal>{self.depth}</ogc:Literal>
           </ogc:PropertyIsEqualTo>
         </ogc:Filter>
         
           <LineSymbolizer>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">5</CssParameter>
+              <CssParameter name="stroke-width">{self.strokeWidth}</CssParameter>
             </Stroke>
           </LineSymbolizer>
         </Rule>
