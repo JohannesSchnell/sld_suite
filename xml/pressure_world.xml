@@ -18,7 +18,7 @@
                     <ogc:PropertyIsEqualTo>
                       <ogc:Function name="IEEERemainder">
                         <ogc:Function name="int2ddouble">
-                          <ogc:PropertyName>press</ogc:PropertyName>
+                          <ogc:PropertyName>Pressure_reduced_to_MSL_msl</ogc:PropertyName>
                         </ogc:Function>
                         <ogc:Literal>500</ogc:Literal>
                       </ogc:Function>
