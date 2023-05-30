@@ -1,0 +1,35 @@
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <StyledLayerDescriptor xmlns="http://www.opengis.net/sld"
+          xmlns:ogc="http://www.opengis.net/ogc"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/sld
+         http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd" version="1.0.0">
+          <NamedLayer>
+            <Name>pressure_heatmap</Name>
+            <UserStyle>
+              <FeatureTypeStyle>
+                <Title>pressure_heatmap</Title>
+        
+                <Rule>
+                    <RasterSymbolizer>
+                        <ColorMap extended = 'true'>
+                    <ColorMapEntry color = '#67001F' quantity = '98500'/>
+<ColorMapEntry color = '#B2182B' quantity = '99000'/>
+<ColorMapEntry color = '#D6604D' quantity = '99500'/>
+<ColorMapEntry color = '#F4A582' quantity = '100000'/>
+<ColorMapEntry color = '#FDDBC7' quantity = '100500'/>
+<ColorMapEntry color = '#F7F7F7' quantity = '101000'/>
+<ColorMapEntry color = '#D1E5F0' quantity = '101500'/>
+<ColorMapEntry color = '#92C5DE' quantity = '102000'/>
+<ColorMapEntry color = '#4393C3' quantity = '102500'/>
+<ColorMapEntry color = '#2166AC' quantity = '103000'/>
+<ColorMapEntry color = '#053061' quantity = '103500'/>
+                        </ColorMap>
+                    </RasterSymbolizer>
+                </Rule>
+              </FeatureTypeStyle>
+            </UserStyle>
+          </NamedLayer>
+        </StyledLayerDescriptor>   
+        
