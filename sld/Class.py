@@ -23,6 +23,5 @@ class Class:
     def writeSld(self, outfile=None):
         sld = self.createSld()
 
-        file = open(f'./xml/{outfile or self.layerName}.xml', 'w+')
-        file.write(sld)
-        file.close()
+        with open(f'./xml/{outfile or self.layerName}.xml', 'w+') as file:
+            file.write(sld)

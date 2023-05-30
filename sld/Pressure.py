@@ -129,9 +129,8 @@ class Pressure:
     def printSld(self):
         print(self.createSld())
 
-    def writeSld(self, outfile=layerName):
+    def writeSld(self, outfile=None):
         sld = self.createSld()
 
-        file = open(f'./xml/{outfile}.xml', 'w+')
-        file.write(sld)
-        file.close()
+        with open(f'./xml/{outfile or self.layerName}.xml', 'w+') as file:
+            file.write(sld)

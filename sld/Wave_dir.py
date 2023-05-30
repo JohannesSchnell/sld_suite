@@ -1,4 +1,4 @@
-class Class:
+class WaveDir:
     layerName = 'wave_dir'
     layerStyle = 'wave_dir'
     scale = 0.01
@@ -71,9 +71,7 @@ class Class:
                         extshape://narrow              
                         </WellKnownName>
                         <Fill>
-                          <CssParameter name ="fill">{self.fill}
-
-                  
+                          <CssParameter name ="fill">{self.fill}            
 
                           </CssParameter>
                         </Fill>
@@ -85,7 +83,7 @@ class Class:
                       <Size>{self.markSize}</Size>
                       <Rotation>
               
-          	       <ogc:PropertyName>{self.propertyName}</ogc:PropertyName>
+                        <ogc:PropertyName>{self.propertyName}</ogc:PropertyName>
     
                       </Rotation>
                     </Graphic>
@@ -103,6 +101,5 @@ class Class:
     def writeSld(self, outfile=None):
         sld = self.createSld()
 
-        file = open(f'./xml/{outfile or self.layerName}.xml', 'w+')
-        file.write(sld)
-        file.close()
+        with open(f'./xml/{outfile or self.layerName}.xml', 'w+') as file:
+            file.write(sld)
