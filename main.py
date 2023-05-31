@@ -11,7 +11,7 @@ import wave_dir
 import pressure
 
 
-def styleballern(path, admin, password, url):
+def putSLDs(path, admin, password, url):
     filepaths = [os.path.join(path, file) for file in os.listdir(path)]
 
     for filepath in filepaths:
@@ -30,7 +30,7 @@ def styleballern(path, admin, password, url):
                                params={'file': filepath})
 
 
-styleballern(path='./xml',
-             admin='admin',
-             password='geoserver',
-             url='http://localhost/geoserver/rest')
+putSLDs(path='./xml',
+        admin='admin',
+        password='geoserver',
+        url='http://localhost/geoserver/rest')
