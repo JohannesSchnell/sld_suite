@@ -7,6 +7,7 @@ intervalls = dict(
     smallShip=[-1, 2, 4, 7],
     bigShip=[-1, 5, 9, 13]
 )
+
 for steps in intervalls.items():
     wave_height = Heatmap(
         layerName=f'wave_height_{steps[0]}',

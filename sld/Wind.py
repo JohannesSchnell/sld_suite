@@ -30,8 +30,7 @@ class Windbarbs:
 
     def createSld(self):
         barbString = f"""sqrt(({self.u} * {self.u}) + {self.v} * {self.v}))"""
-        return (f"""
-        <?xml version="1.0" encoding="UTF-8"?>
+        return (f"""<?xml version="1.0" encoding="UTF-8"?>
 <StyledLayerDescriptor xmlns="http://www.opengis.net/sld"
   xmlns:ogc="http://www.opengis.net/ogc"
   xmlns:xlink="http://www.w3.org/1999/xlink"
