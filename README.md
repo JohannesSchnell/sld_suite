@@ -2,7 +2,7 @@
 
 ## structure
 
-Classes are defined in /sld/. <br>
+Classes are defined in ```/sld/```. <br>
 There are multiple for each type of SLD. <br>
 The SLD is defined within the Classes and is what seperates Classes from eachother.
 
@@ -13,7 +13,8 @@ SLDs.
 
 ## how to use
 
-- if you want to make changes to the structure of a SLD, do it in the /sld/ subfolder in its respective Class or create
+- if you want to make changes to the structure of a SLD, do it in the ```/sld/``` subfolder in its respective Class or
+  create
   a new one
 - if you want to make changes to the variables (eg. Colors and ValueRanges) of a SLD, do it in the files in the root
   directory
