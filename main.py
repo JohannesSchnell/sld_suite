@@ -1,10 +1,14 @@
+import os
+import requests
+
+if not os.path.isdir('./xml'):
+    os.makedirs('./xml')
+
 import heatmaps
 import depths
 import wind
 import wave_dir
 import pressure
-import os
-import requests
 
 
 def styleballern(path, admin, password, url):
